@@ -518,6 +518,7 @@
 
   .photobooth-frame {
     position: relative; max-width: 700px;
+    width: calc(100% - 32px);
     margin: 60px auto 0;
     border: 2px solid var(--rose);
     border-radius: 12px; overflow: hidden;
@@ -531,8 +532,23 @@
   }
 
   .photobooth-img {
-    width: 100%; height: 520px; object-fit: cover;
-    display: block; transition: transform 8s ease;
+    width: 100%;
+    height: auto;
+    min-height: 280px;
+    max-height: 600px;
+    object-fit: contain;
+    object-position: center top;
+    display: block;
+    background: #1a0a10;
+    transition: transform 8s ease;
+  }
+
+  @media (min-width: 600px) {
+    .photobooth-img {
+      object-fit: cover;
+      height: 520px;
+      max-height: none;
+    }
   }
 
   .photobooth-img:hover { transform: scale(1.03); }
@@ -1525,7 +1541,7 @@
       <div class="photobooth-corner tr"></div>
       <div class="photobooth-corner bl"></div>
       <div class="photobooth-corner br"></div>
-      <img class="photobooth-img" src="https://i.ibb.co/d47J0C4W/file-00000000c2b871fa8d248330bf1205da.png?w=1200&q=80" alt="Couple Photo">
+      <img class="photobooth-img" src="https://i.ibb.co/mCKkDjH5/Chat-GPT-Image-Apr-25-2026-09-38-42-PM.png?w=1200&q=80" alt="Couple Photo">
       <div class="photobooth-caption">
         <h3>Vishal & Loxmi</h3>
         <p>March 2015 · Our Story Begins</p>
